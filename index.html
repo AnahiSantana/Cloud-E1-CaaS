@@ -19,31 +19,31 @@
             font-size: x-large;
         }
 
-        form {
-            padding-top: 50px;
-        }
 
         #imagen {
             float: right;
             padding-right: 100px;
         }
+
+        h1 {
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
-
-
-    <form>
-        <label>Enter text:</label><br>
-        <textarea rows="4" cols="50" name="intext"></textarea><br>
-        <input type="submit" value="Submit">
-    </form><br>
+    <h1>Tone Analizer</h1>
+    <label>Enter text:</label><br>
+    <textarea rows="4" cols="50" id="intext"></textarea><br>
+    <input onclick="analizeText()" id="sumitButton" type="submit" value="Submit">
+    <br>
 
     <div id="imagen">
         <img src="https://i.pinimg.com/originals/9a/42/5e/9a425ebfc86a2c4a5a889486d31f4a23.jpg" alt="gatito triste">
     </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-
+    <script src="index.js"></script>
 </body>
 
 </html>
