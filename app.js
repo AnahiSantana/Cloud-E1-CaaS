@@ -3,7 +3,6 @@ const cors = require('cors')
 
 require('dotenv').config();
 
-const router = require('./src/routes')
 const path = require('path');
 
 const { json, urlencoded } = express
@@ -20,13 +19,7 @@ app.use(urlencoded({ extended: false }))
 
 
 app.use(cors(corsOptions))
-app.use(router)
-
-
-app.use('/home',(req,res) => { res.sendFile(path.join(__dirname+'/src/html/index.html')); })
-app.use('/', (req, res) => { res.send(`I don't Love Docker & Kubernetes & NodeJs`);})
-
-
+app.use('/', express.static(path.join(__dirname, 'front')));
 
 app.listen(port,host, () => { console.log(`Server listening on port ${port} in the host ${host}`); })
 
